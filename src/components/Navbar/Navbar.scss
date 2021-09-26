@@ -1,0 +1,28 @@
+ 
+  .nav{
+    text-decoration: none;
+    background-color: rgb(4,40,42);
+    grid-area: n;
+    .nav__item {
+      padding: 0 10px;
+      text-decoration: none;
+      font-size: 40px;
+      color: #fff;
+      .active{
+        color: goldenrod;
+        text-decoration: none;
+      }
+      a{
+        text-decoration: none;
+        color: #fff;
+      } 
+    }
+    .subItem{
+      padding-top: 100px;
+    }
+  }
+
+
+.F{
+font-size: 20px;
+}
