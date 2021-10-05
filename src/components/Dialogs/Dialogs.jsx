@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import './Dialogs.scss';
 
 const DialogItem = (props) => {
+    
     let path = '/dialogs/' + props.id;
     return (
         <div className="dialogs__dialog">
@@ -17,19 +18,20 @@ const Message = (props) => {
     )
 }
 
-let addMessageArea = React.createRef();
-
-let addMessage = () =>{
-    let text = addMessageArea.current.value;
-    alert (text);
-}
-
 const Dialogs = (props) => {
 
-    let messageCreate = props.messages
-    .map(m => <Message message={m.message} />)
+    console.log(props)
 
-    let dialogCreate = props.dialogsss.map((d) => {
+    let addMessageArea = React.createRef();
+
+    let addMessage = () =>{
+        let text = addMessageArea.current.value;
+        alert (text);
+    }
+
+    let messageCreate = props.messages.map(m => <Message message={m.message} />)
+
+    let dialogCreate = props.dialogsss.dialogs.map((d) => {
         return (
             <DialogItem name={d.name} id={d.id} />
         )

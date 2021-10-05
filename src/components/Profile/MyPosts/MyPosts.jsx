@@ -2,18 +2,25 @@ import React from "react";
 import './MyPosts.scss';
 import Postt from "./Post/Post";
 
-let addPostArea = React.createRef()
-
-let addPost = () => {
-    let text = addPostArea.current.value;
-    alert (text); 
-}
-
 
 const MyPosts = (props) => {
 
-    let postCreate = props.posts.map(p => <Postt message={p.message}
-         likeCount={p.likeCount} />);
+    
+    console.log(props)
+
+    let addPost = () => {
+        let text = addPostArea.current.value;
+        props.addPost(text);
+        addPostArea.current.value = "";
+    }
+
+    let postCreate = props.posts.map((p) => <Postt message={p.message} likeCount={p.likeCount} />);
+    let addPostArea = React.createRef()
+
+    let onPostChange = () => {
+        let text = addPostArea.current.value;
+        props.updateNewPostText(text);
+    }    
 
     return (
         <div className='postsBlock'>
@@ -21,10 +28,10 @@ const MyPosts = (props) => {
                 My posts
             </div>
             <div>
-                <textarea ref ={addPostArea} ></textarea>
+                <textarea onChange={onPostChange} ref={addPostArea} value={props.newPostText} />
             </div>
             <div>
-               <button onClick={addPost} >  Add post </button>
+                <button onClick={addPost} >  Add post </button>
             </div>
             <div className="userPosts">
                 {postCreate}
