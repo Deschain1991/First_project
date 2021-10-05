@@ -20,8 +20,6 @@ const Message = (props) => {
 
 const Dialogs = (props) => {
 
-    console.log(props)
-
     let addMessageArea = React.createRef();
 
     let addMessage = () =>{
