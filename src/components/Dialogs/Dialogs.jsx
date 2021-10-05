@@ -29,9 +29,11 @@ const Dialogs = (props) => {
         alert (text);
     }
 
+    
+
     let messageCreate = props.messages.map(m => <Message message={m.message} />)
 
-    let dialogCreate = props.dialogsss.dialogs.map((d) => {
+    let dialogCreate = props.dialogsss.map((d) => {
         return (
             <DialogItem name={d.name} id={d.id} />
         )

@@ -12,8 +12,6 @@ import { Route } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
 const App = (props) => {
-
-  console.log(props)
   
   return (
     <BrowserRouter>

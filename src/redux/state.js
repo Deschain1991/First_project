@@ -45,15 +45,15 @@ export const addPost = (postMessage) => {
 
   state.posts.push(newPost);
   rerenderEntireTree(state);
-}
+};
 
 export const updateNewPostText = (newText) => {
   state.newPostText = newText;
   rerenderEntireTree(state);
-}
+};
 
 export const subscribe = (observer) => {
   rerenderEntireTree = observer;
-}
+};
 
 export default state;

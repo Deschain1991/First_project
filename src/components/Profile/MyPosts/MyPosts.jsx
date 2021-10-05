@@ -5,8 +5,6 @@ import Postt from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    
-    console.log(props)
 
     let addPost = () => {
         let text = addPostArea.current.value;
