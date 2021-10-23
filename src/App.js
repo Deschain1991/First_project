@@ -23,6 +23,7 @@ const App = (props) => {
             path='/dialogs'
             component={() => (
               <Dialogs 
+                store= {props.store}
                 dialogsss={props.appState.dialogs} 
                 messages={props.appState.messages} 
               />
@@ -33,9 +34,8 @@ const App = (props) => {
             component={() => (
               <Profile
                 posts={props.appState.posts}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
                 newPostText={props.appState.appState} 
-                updateNewPostText={props.updateNewPostText}
               />
             )}
           />
